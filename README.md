@@ -1,2 +1,63 @@
 # forth
-Addition and subtraction of of two complex number using class and object in c++ 
+// Addition and subtraction of of two complex number using class and object in c++ 
+
+#include<iostream>
+using namespace std;
+class complex
+{
+private:
+int real, img;
+public:
+complex() //constuctor
+{
+real=0;
+img=0;
+}
+void getdata()
+{
+cout<<"Enter the real no.";
+cin>>real;
+cout<<"Enter the  img no.";
+cin>>img;
+
+}
+
+complex operator+(complex c2)
+{
+complex c3;
+c3.real=real+c2.real;
+c3.img=img+c2.img;
+return c3;
+}
+complex operator-(complex c2)
+{
+complex c4;
+c4.real=real-c2.real;
+c4.img=img-c2.img;
+return c4;
+}
+void display()
+{
+cout<<"The complex no addition  is "<<real<<"+"<<img<<"i"<<endl;
+
+}
+void show()
+{
+cout<<"The complex no substraction  is "<<real<<"-"<<img<<"i"<<endl; 
+}
+};
+int main()
+{
+complex c1,c2,c3,c4;
+cout<<"Enter the complex no. "<<endl;
+c1.getdata();
+cout<<"Enter the second complex no. "<<endl;
+c2.getdata();
+c3=c1+c2;
+c3.display();
+c4=c1-c2;
+c4.show();
+
+return 0;
+
+}
